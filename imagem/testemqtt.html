@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IoT + MQTT</title>
+  <style>
+    .dispositivo {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .ligado { color: green; }
+    .desligado { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Simulador IoT com MQTT</h1>
+  
+  <label for="nome">Nome do dispositivo:</label>
+  <input type="text" id="nome" placeholder="Ex: Lâmpada" />
+  <button id="cadastrar">Cadastrar</button>
+
+  <div id="lista-dispositivos"></div>
+
+  <!-- MQTT.js -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SisConecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Barra de navegação no topo -->
+  <header class="navbar">
+    <div class="logo">SisConecta</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" data-secao="inicio" class="ativo">Início</a></li>
+        <li><a href="#" data-secao="dispositivos">Gerenciar Dispositivos</a></li>
+        <li><a href="#" data-secao="faq">FAQ</a></li>
+        <li><a href="#" data-secao="perfil">Perfil</a></li>
+        <li><a href="#" data-secao="sobre-nos">Sobre Nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="conteudo">
+    <!-- Seção Início -->
+    <div id="inicio" class="secao ativa">
+      <h1>Bem-vindo ao SisConecta</h1>
+
+      <h2>Seus dispositivos:</h2>
+      <div id="lista-inicio"></div>
+    </div>
+
+    <!-- Seção Gerenciar Dispositivos -->
+    <div id="dispositivos" class="secao">
+      <h2>Cadastrar Dispositivos</h2>
+
+
+      <label for="nome">Nome do dispositivo:</label>
+      <input type="text" id="nome" />
+
+      <label for="tipo">Tipo:</label>
+      <select id="tipo">
+        <option value="Ar-condicionado">❄️ Ar-condicionado</option>
+        <option value="Televisão">📺 Televisão</option>
+        <option value="Lâmpada">💡 Lâmpada</option>
+        <option value="Tomada">🔌 Tomada</option>
+        <option value="Alarme Residencial">Alarme</option>
+      </select>
+
+      <label for="local">Local:</label>
+      <select id="local">
+        <option value="SalaEstar">🛋️ Sala de Estar</option>
+        <option value="Cozinha">🍽️ Cozinha</option>
+        <option value="Quarto">🛏️ Quarto</option>
+        <option value="Banheiro">🚿 Banheiro</option>
+        <option value="EscritorioCasa">💻 Escritório</option>
+        <option value="Residência">Residência</option>
+      </select>
+
+      <div id="campo-temperatura" style="display: none; margin-top: 10px;">
+        <label for="temperatura">Temperatura (°C):</label>
+        <input type="range" id="temperatura" min="16" max="30" value="24" />
+        <span id="valor-temperatura">24º</span>
+      </div>
+
+      <button id="cadastrar">Cadastrar</button>
+
+      <h3>Dispositivos cadastrados:</h3>
+      <div id="lista-dispositivos"></div>
+    </div>
+
+    <!-- Seção FAQ -->
+    <div id="faq" class="secao">
+      <h2>Perguntas Frequentes (FAQ)</h2>
+      <ul style="margin-top: 15px;">
+        <li><strong>Como adiciono um dispositivo?</strong> — Preencha o nome, selecione o tipo e clique em "Cadastrar".
+        </li>
+        <li><strong>Como removo um dispositivo?</strong> — Clique no botão "Apagar" ao lado do dispositivo.</li>
+        <li><strong>O que é o campo de temperatura?</strong> — Ele aparece apenas para ar-condicionado e define a
+          temperatura desejada.</li>
+          <li><strong>Deseja falar conosco?</strong> </li>
+          <p>E-mail: contato@sisconecta.com.br</p>
+          <p>Tel: +55 (11)95050-7070</p>
+      </ul>
+    </div>
+
+    <!-- Seção Perfil -->
+    <div id="perfil" class="secao">
+      <h2>Meu Perfil</h2>
+
+      <div class="profile-info">
+        <h3 id="profile-name">Nome do Usuário</h3>
+        <p id="profile-email">email@exemplo.com</p>
+      </div>
+
+      <div class="account-info">
+        <p><strong>Nome:</strong> <span id="account-name">Nome Completo</span></p>
+        <p><strong>Email:</strong> <span id="account-email">email@exemplo.com</span></p>
+        <p><strong>Organização:</strong> <span id="account-organization">Nome da Organização</span></p>
+      </div>
+
+      <button id="edit-button" class="edit-button">Editar Perfil</button>
+
+      <form id="edit-form" class="edit-form" style="display: none; margin-top: 15px;">
+        <input type="text" id="edit-name-input" placeholder="Novo Nome" />
+        <input type="email" id="edit-email-input" placeholder="Novo Email" />
+        <input type="text" id="edit-organization-input" placeholder="Nova Organização" />
+        <button type="submit">Salvar Alterações</button>
+      </form>
+
+      <button onclick="logout()" class="btn-sair" style="margin-top: 20px;">Sair</button>
+    </div>
+
+    <!-- Seção Sobre Nós -->
+    <div id="sobre-nos" class="secao">
+      <h2>Sobre Nós</h2>
+      <p>Na SisConecta, transformamos tecnologia em simplicidade. Somos uma empresa especializada em integração completa
+        de dispositivos IoT (Internet das Coisas) em ambientes digitais em um único e inteligente painel de controle
+        online.</p>
+
+      <h3>Missão</h3>
+      <p>A missão da SisConecta é oferecer soluções tecnológicas que facilitem a gestão, conectividade e automação de
+        dispositivos no ambiente corporativo, promovendo produtividade e eficiência para os nossos clientes.
+      </p>
+      <p>A visão da SisConecta é ser a referência nacional em soluções inteligentes para a gestão de dispositivos,
+        reconhecida pela inovação, qualidade e impacto positivo na transformação digital das empresas.</p>
+
+      <h3>Valores</h3>
+      <p>Os valores da SisConecta são oferecer inovação e comprometimento de forma simples e sustentável, contribuindo
+        para ambientes corporativos mais eficientes e conscientes, garantindo a proteção dos dados e dos dispositivos
+        gerenciados, além de sempre manter a ética em primeiro lugar.</p>
+      <h3>Nosso Time</h3>
+      <div class="grid">
+        <div class="card"><img src="img/alana.jpg" alt="Alana Pietra">
+          <p>Alana Pietra<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/matheus.jpg" alt="Matheus Ramos">
+          <p>Matheus Ramos<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/henry.jpg" alt="Henry Anjos">
+          <p>Henry Anjos<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/carlos.jpg" alt="Carlos Santos">
+          <p>Carlos Santos<br><small>Tech Lead</small></p>
+        </div>
+        <div class="card"><img src="img/erick.jpg" alt="Erick Goes">
+          <p>Erick Goes<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/pedro.jpg" alt="Pedro Henrique">
+          <p>Pedro Henrique<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/denis.jpg" alt="Denis Rocha">
+          <p>Denis Rocha<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/david.jpg" alt="David Lima">
+          <p>David Lima<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/vitinho.jpg" alt="Victor Hugo">
+          <p>Victor Hugo<br><small>DEV</small></p>
+        </div>
+        <div class="card"><img src="img/miguel.jpg" alt="Miguel">
+          <p>Miguel<br><small>DEV</small></p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
